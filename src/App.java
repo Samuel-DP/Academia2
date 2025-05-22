@@ -48,7 +48,10 @@ public class App {
         System.out.println("DNI: ");
         String dni = sc.nextLine().trim();
 
-        //Faltaria comprobar que no hay espacios vacios
+        if(nombre.isEmpty() || apellido.isEmpty() || dni.isEmpty()){
+            System.out.println("No se pueden dejar espacios en  blanco");
+            return;
+        }
 
         Estudiante estudiante = new Estudiante(nombre, apellido, dni);
         boolean añadido = academia.añadirEstudiante(estudiante);
@@ -68,7 +71,10 @@ public class App {
         System.out.println("Duracion (h): ");
         String duracionStrign = sc.nextLine().trim();
 
-        //Faltaria comprobar que no hay espacios vacios
+        if(id.isEmpty() || nombre.isEmpty() || duracionStrign.isEmpty()){
+            System.out.println("No se pueden dejar espacios en  blanco");
+            return;
+        }
 
         int duracion = 0;
         try {
